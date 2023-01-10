@@ -1,4 +1,4 @@
-# This script builds both the HTML and PDF versions of your CV
+# This script builds the HTML and PDF versions of the CV
 
 # Knit the HTML version
 rmarkdown::render("cv.rmd",
