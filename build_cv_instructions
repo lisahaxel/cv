@@ -1,0 +1,7 @@
+# run ?datadrivencv::use_datadriven_cv to see more details
+datadrivencv::use_datadriven_cv(
+  full_name = "Lisa Haxel",
+  data_location = "https://docs.google.com/spreadsheets/d/1gq8qiwrswqJBF-r673YDvpRsUabhC2Fi0Kx_AhkTfo8/edit?usp=sharing",
+  pdf_location = "https://github.com/lisahaxel/cv/haxel_cv.pdf",
+  html_location = "lisahaxel.me/cv/",
+  source_location = "https://github.com/lisahaxel/cv"
