@@ -44,21 +44,11 @@ if(params$pdf_mode) {
 
 Aside
 ================================================================================
-
 ```{r}
-# Build interactive network of positions colored by section
-# and connected if they occurred in the same year
-datadrivencv::build_network_logo(CV$entries_data)
+# Add photo
+knitr::include_graphics("application_photo.png")
 ```
 
-
-```{r}
-if(params$pdf_mode){
-  cat("View this CV online with links at _lisahaxel.me/cv/_")
-} else {
-  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/lisahaxel/cv/haxel_cv.pdf)")
-}
-```
 
 Contact {#contact}
 --------------------------------------------------------------------------------
@@ -77,15 +67,14 @@ CV %>% print_skill_bars()
 ```
 
 
-
 Disclaimer {#disclaimer}
 --------------------------------------------------------------------------------
 
-Made with the R package [**pagedown**](https://github.com/rstudio/pagedown). 
-
-Last updated on `r Sys.Date()`.
-
-Source: [github.com/lisahaxel/cv](https://github.com/lisahaxel/cv).
+::: aside
+```{r}
+CV %<>% print_text_block('research_positions_aside')
+```
+:::
 
 Main
 ================================================================================
@@ -97,7 +86,6 @@ Lisa Haxel {#title}
 # Note the special double pipe so we modify the CV object in place
 CV %<>% print_text_block("intro") 
 ```
-
 
 
 Education {data-icon=graduation-cap data-concise=true}
@@ -116,32 +104,12 @@ Research Experience {data-icon=laptop}
 CV %<>% print_section('research_positions')
 ```
 
-
-
-Industry Experience {data-icon=suitcase}
---------------------------------------------------------------------------------
-
-::: aside
-```{r}
-CV %<>% print_text_block('industy_experience_aside')
-```
-:::
-
-```{r}
-CV %<>% print_section('industry_positions')
-```
-
-<!-- These breaks just force a new page so section doesnt get cut off -->
-<br>
-<br>
-<br>
-
 Teaching Experience {data-icon=chalkboard-teacher}
 --------------------------------------------------------------------------------
 
 ::: aside
 ```{r}
-CV %<>% print_text_block('teaching_experience_aside')
+CV %<>% print_text_block('teaching_positions_aside')
 ```
 :::
 
@@ -150,44 +118,22 @@ CV %<>% print_section('teaching_positions')
 ```
 
 
-
-Selected Data Science Writing {data-icon=chart-line}
+Volunteer Experience {data-icon=hands-helping}
 --------------------------------------------------------------------------------
 
 ::: aside
 ```{r}
-CV %<>% print_text_block('data_science_writing_aside')
+CV %<>% print_text_block('voluntary_aside')
 ```
 :::
 
 ```{r}
-CV %<>% print_section('data_science_writings')
+CV %<>% print_section('voluntary')
 ```
 
 
 
-Selected Press (About)  {data-icon=newspaper}
---------------------------------------------------------------------------------
-
-```{r}
-CV %<>% print_section('about_me_press')
-```
-
-
-<br>
-<br>
-
-
-Selected Press (By)  {data-icon=newspaper}
---------------------------------------------------------------------------------
-
-```{r}
-CV %<>% print_section('by_me_press')
-```
-
-
-
-Selected Publications, Posters, and Talks {data-icon=book}
+Pre-registrations and Publications {data-icon=book}
 --------------------------------------------------------------------------------
 
 ```{r}
@@ -196,7 +142,32 @@ CV %<>% print_section('academic_articles')
 
 
 
+Honors, Awards and Funding History {data-icon=trophy}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %<>% print_section('awards')
+```
+
+
+Qualifications {data-icon=newspaper}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %<>% print_section('qualifications')
+```
+
+Disclaimer {#disclaimer}
+--------------------------------------------------------------------------------
+
+Made with the R package [**pagedown**](https://github.com/rstudio/pagedown). 
+Last updated on `r Sys.Date()`.
+Source: [github.com/lisahaxel/cv](https://github.com/lisahaxel/cv).
+
+
 ```{r}
 CV %<>% print_links()
 ```
+
+
 
