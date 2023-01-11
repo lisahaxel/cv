@@ -57,8 +57,6 @@ Contact {#contact}
 CV %>% print_contact_info()
 ```
 
-
-
 Language Skills {#skills}
 --------------------------------------------------------------------------------
 
@@ -70,11 +68,11 @@ CV %>% print_skill_bars()
 Disclaimer {#disclaimer}
 --------------------------------------------------------------------------------
 
-::: aside
-```{r}
-CV %<>% print_text_block('research_positions_aside')
-```
-:::
+Made with the R package [**pagedown**](https://github.com/rstudio/pagedown). 
+
+Last updated on `r Sys.Date()`.
+
+Source: [github.com/lisahaxel/cv](https://github.com/lisahaxel/cv).
 
 Main
 ================================================================================
@@ -103,6 +101,13 @@ Research Experience {data-icon=laptop}
 ```{r}
 CV %<>% print_section('research_positions')
 ```
+
+::: aside
+```{r}
+CV %<>% print_text_block('research_positions_aside')
+```
+:::
+
 
 Teaching Experience {data-icon=chalkboard-teacher}
 --------------------------------------------------------------------------------
@@ -150,6 +155,7 @@ CV %<>% print_section('awards')
 ```
 
 
+
 Qualifications {data-icon=newspaper}
 --------------------------------------------------------------------------------
 
@@ -157,17 +163,8 @@ Qualifications {data-icon=newspaper}
 CV %<>% print_section('qualifications')
 ```
 
-Disclaimer {#disclaimer}
---------------------------------------------------------------------------------
-
-Made with the R package [**pagedown**](https://github.com/rstudio/pagedown). 
-Last updated on `r Sys.Date()`.
-Source: [github.com/lisahaxel/cv](https://github.com/lisahaxel/cv).
-
-
 ```{r}
 CV %<>% print_links()
 ```
-
 
 
